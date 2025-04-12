@@ -1,0 +1,148 @@
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 97%;
+    background-color: black;
+    font-family: 'Amiri', serif;
+}
+
+#content {
+    padding: 0 20px 0 12px;
+    margin: auto;
+    font: 1.5em 'Amiri', serif;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#round {
+    border-width: 5px;
+    padding: 0px 0px;
+    -moz-border-image: url(border.png) 30 30 round;
+    -webkit-border-image: url(border.png) 30 30 round;
+    -o-border-image: url(border.png) 30 30 round;
+    border-image: url(border.png) 30 30 round;
+}
+
+#salahCanvas {
+    padding: 10px;
+    background: #FCFFFF;
+    border-radius: 25px;
+    border: 1px solid #EAC117;
+}
+
+.salahClock {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #E65C00;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#clock {
+    padding: 10px;
+    border-radius: 25px;
+    border: 10px solid #E65C00;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 90%;
+    height: auto;
+}
+
+#top {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    font-size: 1.5em;
+    color: yellow;
+    text-align: center;
+}
+
+#ticker, #Danskticker, #staticText {
+    border: 1px solid #EAC117;
+    padding: 10px;
+    background: #E65C00;
+    border-radius: 25px;
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+}
+
+#Danskticker, #staticText {
+    background: #EAC117;
+}
+
+#staticText {
+    font-size: 2em;
+}
+
+.table1 {
+    width: 31%;
+    color: #fff;
+    text-align: center;
+    float: left;
+    margin: 0;
+}
+
+.marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    font-size: 2em;
+}
+
+@media (max-width: 768px) {
+    .salahClock {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    marquee {
+        font-size: 1.5em;
+    }
+
+    #top {
+        font-size: 1.2em;
+        padding: 5px 0;
+    }
+
+    #ticker, #Danskticker, #staticText {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .marquee {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .salahClock {
+        max-width: 100%;
+        padding: 6px;
+    }
+
+    #clock {
+        padding: 8px;
+        border-width: 6px;
+    }
+
+    .marquee {
+        font-size: 1em;
+    }
+}

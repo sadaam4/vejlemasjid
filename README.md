@@ -1,1 +1,1 @@
-# vejlemasjid
+# masjed

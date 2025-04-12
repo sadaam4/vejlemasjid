@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>لوحة التحكم - التواقيت</title>
+    <style>
+        body {
+            background: url('dark-blue-texture.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            text-align: right;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00aaff;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .notification {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: lightgreen;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>إعدادات التواقيت</h1>
+        <label for="hijriAdjustment">تعديل التاريخ الهجري:</label>
+        <input type="number" id="hijriAdjustment" value="0">
+
+        <label for="fredagsSalah">وقت صلاة الجمعة:</label>
+        <select id="fredagsSalah">
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+        </select>
+
+        <button onclick="saveSettings()">💾 حفظ التغييرات</button>
+
+        <div id="notification" class="notification">تم حفظ الإعدادات بنجاح ✅</div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            if (localStorage["hijriAdjustment"]) {
+                document.getElementById('hijriAdjustment').value = localStorage["hijriAdjustment"];
+            }
+            if (localStorage["fredagsSalah"]) {
+                document.getElementById('fredagsSalah').value = localStorage["fredagsSalah"];
+            }
+        };
+
+        function saveSettings() {
+            localStorage["hijriAdjustment"] = document.getElementById("hijriAdjustment").value;
+            localStorage["fredagsSalah"] = document.getElementById("fredagsSalah").value;
+            
+            const note = document.getElementById("notification");
+            note.style.display = "block";
+            setTimeout(() => note.style.display = "none", 3000);
+        }
+    </script>
+</body>
+</html>
